@@ -1,0 +1,40 @@
+// Media query mixins
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// Flexbox mixins
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-flow: $direction nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between ($direction: row) {
+  display: flex;
+  flex-flow: $direction nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Typography mixins
+@mixin heading($size) {
+  font-family: $font-primary;
+  font-weight: bold;
+  line-height: 1.2;
+  font-size: $size;
+}
+
+// Animation mixins
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}

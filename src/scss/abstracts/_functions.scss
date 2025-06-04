@@ -1,0 +1,13 @@
+// Convert px to rem
+@function rem($pixels, $context: $font-size-base) {
+  @return ($pixels / $context) * 1rem;
+}
+
+// Lighten/darken color functions
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
