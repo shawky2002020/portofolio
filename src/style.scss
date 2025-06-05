@@ -16,8 +16,9 @@
 
 // Import page-specific styles
 @import "scss/pages/hero";
-// @import "scss/pages/about";
-// @import "scss/pages/projects";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
 // @import "scss/pages/contact";
 
 // Import components
@@ -30,9 +31,14 @@ body{
   width: 100vw;
   overflow-x: hidden;
 }
+main{
+  width: 100vw;
+}
+
 
 section{
   min-height: 100vh;
+  width: 100vw;
   padding: 0 120px;
 
 }
