@@ -1,0 +1,489 @@
+.skills {
+  padding-top: $spacing-xl * 2;
+  padding-bottom: $spacing-xl * 2;
+  // background-color: $secondary-color;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '<skills>';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: $font-primary;
+    color: rgba($primary-color, 0.1);
+    font-size: 1.2rem;
+  }
+  
+  &::after {
+    content: '</skills>';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-family: $font-primary;
+    color: rgba($primary-color, 0.1);
+    font-size: 1.2rem;
+  }
+}
+
+.skills-header {
+  text-align: center;
+  margin-bottom: $spacing-xl * 1.5;
+  
+  .section-title {
+    @include heading($font-size-h2);
+    color: $white;
+    margin-bottom: $spacing-md;
+    position: relative;
+    display: inline-block;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: $primary-color;
+    }
+  }
+  
+  .section-subtitle {
+    color: $accent-dark;
+    font-size: $font-size-h4;
+    font-family: $font-secondary;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl * 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  @include respond-to(lg) {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.skills-column {
+  flex: 1;
+  background: rgba($secondary-dark, 0.5);
+  border-radius: 10px;
+  padding: $spacing-lg;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  
+  &.technical {
+    border-left: 4px solid $primary-color;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e5383b' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.1;
+    }
+  }
+  
+  &.non-technical {
+    border-left: 4px solid $accent-dark;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b1a7a6' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.1;
+    }
+  }
+}
+
+.skills-category-header {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+  position: relative;
+  
+  .category-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: $primary-darker;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto $spacing-md;
+    
+    i {
+      font-size: 30px;
+      color: $white;
+    }
+  }
+  
+  h3 {
+    font-family: $font-primary;
+    font-size: $font-size-h3;
+    color: $white;
+    margin-bottom: $spacing-xs;
+  }
+  
+  p {
+    color: $accent-dark;
+    font-family: $font-secondary;
+    font-style: italic;
+  }
+  
+  .non-technical & .category-icon {
+    background: $accent-dark;
+    
+    i {
+      color: $secondary-dark;
+    }
+  }
+}
+
+.skill-group {
+  margin-bottom: $spacing-xl;
+  
+  h4 {
+    font-family: $font-primary;
+    font-size: $font-size-h4;
+    color: $white;
+    margin-bottom: $spacing-md;
+    display: flex;
+    align-items: center;
+    
+    i {
+      margin-right: $spacing-sm;
+      color: $primary-color;
+      
+      .non-technical & {
+        color: $accent-dark;
+      }
+    }
+  }
+}
+
+// Technical skills styling
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.skill-item {
+  position: relative;
+  
+  &:hover .skill-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $spacing-xs;
+  
+  .skill-name {
+    color: $accent-light;
+    font-family: $font-secondary;
+    font-weight: 500;
+  }
+  
+  .skill-percentage {
+    color: $accent-dark;
+    font-family: $font-secondary;
+    font-weight: 700;
+  }
+}
+
+.skill-progress {
+  height: 8px;
+  background: rgba($accent-dark, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, $primary-darker, $primary-color);
+  border-radius: 4px;
+  width: 0; // Will be animated with JS
+  transition: width 1.5s cubic-bezier(0.1, 0.5, 0.1, 1);
+  
+  .non-technical & {
+    background: linear-gradient(90deg, $accent-dark, $white);
+  }
+}
+
+.skill-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: $primary-darker;
+  color: $white;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: $font-secondary;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+  width: max-content;
+  max-width: 200px;
+  text-align: center;
+  margin-bottom: $spacing-xs;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: $primary-darker transparent transparent transparent;
+  }
+  
+  .non-technical & {
+    background: $accent-dark;
+    color: $secondary-dark;
+    
+    &::after {
+      border-color: $accent-dark transparent transparent transparent;
+    }
+  }
+}
+
+// Karate skills styling
+.karate-skills {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.karate-skill {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-md;
+  padding: $spacing-md;
+  background: rgba($secondary-dark, 0.3);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateX(5px);
+  }
+}
+
+.karate-skill-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba($accent-dark, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  
+  i {
+    font-size: 20px;
+    color: $accent-light;
+  }
+}
+
+.karate-skill-info {
+  flex: 1;
+  
+  h5 {
+    font-family: $font-primary;
+    font-size: 1.1rem;
+    color: $white;
+    margin-bottom: $spacing-xs;
+  }
+  
+  p {
+    color: $accent-dark;
+    font-size: 0.9rem;
+    font-family: $font-secondary;
+    margin-top: $spacing-xs;
+  }
+}
+
+.belt-level {
+  display: flex;
+  gap: 3px;
+}
+
+.belt {
+  height: 8px;
+  width: 20px;
+  border-radius: 4px;
+  
+  &.black {
+    background: $white;
+  }
+  
+  &.gray {
+    background: rgba($white, 0.3);
+  }
+}
+
+// Radar chart container
+.skill-radar-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.radar-labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.radar-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: $accent-light;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: $font-secondary;
+  text-align: center;
+  width: max-content;
+}
+
+// Fun skills styling
+.fun-skills {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.fun-skill-item {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.fun-skill-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba($accent-dark, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  
+  i {
+    font-size: 18px;
+    color: $accent-light;
+  }
+}
+
+.fun-skill-bar {
+  flex: 1;
+  height: 10px;
+  background: rgba($accent-dark, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.fun-skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, $accent-dark, $white);
+  border-radius: 5px;
+  width: 0; // Will be animated with JS
+}
+
+.fun-skill-label {
+  width: 120px;
+  text-align: left;
+  color: $accent-light;
+  font-size: 0.9rem;
+  font-family: $font-secondary;
+}
+
+// Quote styling
+.skills-quote {
+  margin-top: $spacing-xl * 2;
+  text-align: center;
+  padding: 0 $spacing-lg;
+  
+  blockquote {
+    font-family: $font-secondary;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: $accent-light;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 $spacing-lg;
+    
+    &::before,
+    &::after {
+      content: '"';
+      font-family: $font-primary;
+      font-size: 4rem;
+      color: rgba($primary-color, 0.2);
+      position: absolute;
+      line-height: 1;
+    }
+    
+    &::before {
+      top: -20px;
+      left: 0;
+    }
+    
+    &::after {
+      content: '"';
+      bottom: -40px;
+      right: 0;
+    }
+    
+    cite {
+      display: block;
+      margin-top: $spacing-md;
+      font-size: 0.9rem;
+      color: $accent-dark;
+      font-style: normal;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: $breakpoint-md ) {
+  .skills {
+    padding-left: $spacing-lg;
+    padding-right: $spacing-lg;
+  }
+  
+  .skills-container {
+    gap: $spacing-xl;
+  }
+  
+  .skill-tooltip {
+    max-width: 150px;
+  }
+}

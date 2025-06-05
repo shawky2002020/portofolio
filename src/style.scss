@@ -18,6 +18,95 @@
 @import "scss/pages/hero";
 @import "scss/pages/education";
 @import "scss/pages/about";
+@import "scss/pages/projects"; // If you've already added this
+@import "scss/pages/skills"; // Add this line
+@import "scss/pages/contact"; // Uncomment this line
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
 @import "scss/pages/projects"; // Uncomment this line
 // @import "scss/pages/contact";
 
@@ -85,4 +174,2638 @@ section{
 }
 .quote-footer{
   overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%; // will animate
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+ 
+ 
+}
+.quote-footer{
+  overflow: hidden;
+}
+// Import abstracts
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/functions";
+
+// Import base styles
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/animations";
+
+// Import layout components
+@import "scss/layout/header";
+// @import "scss/layout/navigation";
+// @import "scss/layout/footer";
+// @import "scss/layout/grid";
+
+// Import page-specific styles
+@import "scss/pages/hero";
+@import "scss/pages/education";
+@import "scss/pages/about";
+@import "scss/pages/projects"; // Uncomment this line
+// @import "scss/pages/contact";
+
+// Import components
+@import "scss/components/buttons";
+// @import "scss/components/cards";
+// @import "scss/components/forms";
+body{
+  background: #000;
+  color: whitesmoke;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+
+
+section{
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0 120px;
+
+}
+.quote-container{
+  position: relative;
+  width: 100%;
+  min-height: 120vh;
+  background: $primary-darker;
+  display:flex ;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  gap: 100px;
+
+
+}
+.quote{
+  max-width: 100%;
+  color: $secondary-color;
+  font-size: 90px;
+  position: relative;
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      overflow: hidden;
+      display: block;
+
+      .fill-text {
+        color: white;
+        display: block;
+        width: 0%;
+      }
+    }
+  }
+
+
 }
