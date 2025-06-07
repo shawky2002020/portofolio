@@ -8,6 +8,18 @@
     <title>SAS</title>
   </head>
   <body>
+    <div class="cursor"></div>
+    <div class="gradient-container"></div>
+    <div class="gradient-layer-2"></div>
+    <div class="gradient-layer-3"></div>
+    
+    <div class="floating-elements">
+        <div class="floating-dot"></div>
+        <div class="floating-dot"></div>
+        <div class="floating-dot"></div>
+        <div class="floating-dot"></div>
+        <div class="floating-dot"></div>
+    </div>
     <header class="header">
       <figure class="logo-container">
         <img class="logo-img" src="assets/imgs/sas.jpg" alt="" />
@@ -46,6 +58,7 @@
     </header>
     <main>
       <section class="hero">
+       
         <div class="me-container">
           <img src="assets/imgs/me.png" alt="" class="me-img" />
         </div>
@@ -747,7 +760,6 @@
           <!-- Add more topics as needed -->
         </div>
         <div class="chatbot-questions" style="display:none">
-          <p class="select-text">Select a question:</p>
           <!-- Question buttons will be dynamically inserted here based on topic selection -->
         </div>
 
@@ -760,5 +772,6 @@
   </body>
   <script type="module" src="/src/scripts/main.js"></script>
   <script type="module" src="/src/scripts/chatbot.js" defer></script>
+  <script type="module" src="/src/scripts/cursor.js" defer></script>
   
 </html>
