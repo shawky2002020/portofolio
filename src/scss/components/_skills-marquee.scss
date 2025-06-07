@@ -1,8 +1,8 @@
 .skills-marquee {
     width: 100%;
-    margin: 12px 0;
+    margin: 150px 0 0 0;
     overflow: hidden;
-    background: $secondary-dark;
+    background: radial-gradient($primary-darkest, $primary-darker);
     padding: $spacing-md 0;
     position: relative;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);

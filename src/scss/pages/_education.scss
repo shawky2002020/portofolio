@@ -2,8 +2,15 @@
   // background: linear-gradient(to bottom, $secondary-color 0%, $secondary-dark 100%);
   position: relative;
   overflow: hidden;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding: 120px auto;
+  margin-top: 80px;
+  @include respond-to(sm) {
+    padding: 120px 16px !important;
+   
+  }
+  @include respond-to(mobile) {
+    padding: 100px 12px !important;
+  }
   
   &::before {
     content: '<education>';
@@ -13,16 +20,22 @@
     font-family: 'milk', monospace;
     color: rgba($primary-color, 0.1);
     font-size: 24px;
+    @include respond-to(md) {
+      left: 8px;
+    }
   }
   
   &::after {
     content: '</education>';
     position: absolute;
-    bottom: 40px;
+    bottom: 0;
     right: 40px;
     font-family: 'milk', monospace;
     color: rgba($primary-color, 0.1);
     font-size: 24px;
+    @include respond-to(md) {
+      right: 8px;
+    }
   }
 }
 
@@ -67,7 +80,10 @@
 .education-timeline {
   position: relative;
   padding-left: 60px;
-  
+  @include respond-to(md) {
+    padding-left: 20px!important;
+  }
+ 
   .timeline-line {
     position: absolute;
     top: 0;
@@ -76,6 +92,9 @@
     height: 100%;
     background: $primary-darker;
     border-radius: 4px;
+    @include respond-to(md) {
+      left: 1px !important;
+    }
     
     &::before, &::after {
       content: '';
@@ -102,7 +121,7 @@
   background: rgba($secondary-dark, 0.7);
   backdrop-filter: blur(10px);
   border-radius: 16px;
-  padding: 30px;
+  padding: 30px ;
   margin-bottom: 60px;
   border-left: 4px solid $primary-color;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -163,7 +182,6 @@
   .education-card-body {
     .education-title {
       font-family: $font-primary;
-      font-size: $font-size-h3;
       color: $white;
       margin-bottom: 8px;
     }
@@ -177,7 +195,6 @@
     
     .education-department {
       font-family: $font-secondary;
-      font-size: 16px;
       color: $primary-color;
       margin-bottom: 20px;
       font-weight: 500;
@@ -229,7 +246,6 @@
         color: $accent-light;
         padding: 6px 12px;
         border-radius: 20px;
-        font-size: 14px;
         font-family: $font-secondary;
         transition: background 0.3s ease, transform 0.3s ease;
         
@@ -244,15 +260,15 @@
 
 .education-quote {
   font-family: $font-primary;
-  font-size: 24px;
   color: $accent-color;
   font-style: italic;
   text-align: center;
-  max-width: 80%;
+  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   padding: 30px 0;
-  
+  line-height: 2;  
   &::before, &::after {
     content: '"';
     font-size: 60px;
@@ -261,13 +277,21 @@
   }
   
   &::before {
-    top: 0;
-    left: -20px;
+    top: -30px;
+    left: -40px;
+    @include respond-to(md) {
+      top: -40px !important;
+      left: -20px !important;
+    }
   }
   
   &::after {
-    bottom: 0;
-    right: -20px;
+    bottom: -30px;
+    right: 0px;
+    @include respond-to(md) {
+      right: 0!important;
+      bottom: -40px!important;
+    }
   }
   
   p {

@@ -36,15 +36,15 @@ $font-size-h1-md: 48px;
 $font-size-h2-md: 40px;
 $font-size-h3-md: 24px;
 $font-size-h4-md: 18px;
-$font-size-base-md: 12px;
+$font-size-base-md: 14px;
 
 
 // Mobile font sizes (sm)
-$font-size-h1-sm: 36px;
-$font-size-h2-sm: 30px;
+$font-size-h1-sm: 34px;
+$font-size-h2-sm: 28px;
 $font-size-h3-sm: 20px;
 $font-size-h4-sm: 16px;
-$font-size-base-sm: 10px;
+$font-size-base-sm: 12px;
 
 
 // Spacing
@@ -55,10 +55,12 @@ $spacing-lg: 2rem;
 $spacing-xl: 3rem;
 
 // Breakpoints
+$breakpoint-mobile: 380px;
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
+$breakpoint-xxl: 1500px;
 
 // Container widths
 $container-max-width: 1140px;

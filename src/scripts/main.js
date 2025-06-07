@@ -944,3 +944,131 @@ if (contactForm) {
     }, 2000);
   });
 }
+
+
+// Testimonials Slider Functionality
+class TestimonialsSlider {
+  constructor() {
+    this.currentSlide = 0;
+    this.slides = document.querySelectorAll('.testimonial-card');
+    this.dots = document.querySelectorAll('.testimonials-dots .dot');
+    this.prevBtn = document.querySelector('.testimonials-navigation .prev');
+    this.nextBtn = document.querySelector('.testimonials-navigation .next');
+    this.autoSlideInterval = null;
+    
+    this.init();
+  }
+  
+  init() {
+    if (this.slides.length === 0) return;
+    
+    this.bindEvents();
+    this.startAutoSlide();
+    this.animateStats();
+  }
+  
+  bindEvents() {
+    // Navigation buttons
+    this.prevBtn?.addEventListener('click', () => this.prevSlide());
+    this.nextBtn?.addEventListener('click', () => this.nextSlide());
+    
+    // Dots navigation
+    this.dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => this.goToSlide(index));
+    });
+    
+    // Pause auto-slide on hover
+    const container = document.querySelector('.testimonials-container');
+    container?.addEventListener('mouseenter', () => this.stopAutoSlide());
+    container?.addEventListener('mouseleave', () => this.startAutoSlide());
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') this.prevSlide();
+      if (e.key === 'ArrowRight') this.nextSlide();
+    });
+  }
+  
+  goToSlide(index) {
+    // Remove active class from current slide and dot
+    this.slides[this.currentSlide]?.classList.remove('active');
+    this.dots[this.currentSlide]?.classList.remove('active');
+    
+    // Update current slide
+    this.currentSlide = index;
+    
+    // Add active class to new slide and dot
+    this.slides[this.currentSlide]?.classList.add('active');
+    this.dots[this.currentSlide]?.classList.add('active');
+    
+    // Animate slide transition
+    gsap.fromTo(this.slides[this.currentSlide], 
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+    );
+  }
+  
+  nextSlide() {
+    const nextIndex = (this.currentSlide + 1) % this.slides.length;
+    this.goToSlide(nextIndex);
+  }
+  
+  prevSlide() {
+    const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+    this.goToSlide(prevIndex);
+  }
+  
+  startAutoSlide() {
+    this.stopAutoSlide();
+    this.autoSlideInterval = setInterval(() => {
+      this.nextSlide();
+    }, 5000); // Change slide every 5 seconds
+  }
+  
+  stopAutoSlide() {
+    if (this.autoSlideInterval) {
+      clearInterval(this.autoSlideInterval);
+      this.autoSlideInterval = null;
+    }
+  }
+  
+  animateStats() {
+    const stats = document.querySelectorAll('.stat-number');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = entry.target;
+          const finalValue = target.textContent;
+          
+          // Extract number from text (e.g., "50+" -> 50)
+          const numericValue = parseInt(finalValue.replace(/[^0-9]/g, ''));
+          
+          // Animate counter
+          gsap.fromTo(target, 
+            { textContent: 0 },
+            {
+              textContent: numericValue,
+              duration: 2,
+              ease: "power2.out",
+              snap: { textContent: 1 },
+              onUpdate: function() {
+                const current = Math.round(this.targets()[0].textContent);
+                target.textContent = finalValue.replace(/[0-9]+/, current);
+              }
+            }
+          );
+          
+          observer.unobserve(target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    stats.forEach(stat => observer.observe(stat));
+  }
+}
+
+// Initialize testimonials slider when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  new TestimonialsSlider();
+});

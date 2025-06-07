@@ -3,8 +3,9 @@
   position: fixed;
   bottom: 30px;
   right: 0;
-  z-index: 500;
+  z-index: 100;
   font-family: $font-secondary;
+
 }
 
 // Toggle Button
@@ -13,14 +14,14 @@
   height: 60px;
   margin-right: 10px;
   border-radius: 50%;
-  background-color: $primary-darker;
+  background-color: rgba($primary-color, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
   
   &:hover {
     transform: translateY(-5px);
@@ -63,14 +64,14 @@
 
 // Chatbot Container
 .chatbot-container {
-  position: absolute;
-  bottom: 80px;
+  font-family: $font-secondary;
+
+  position: fixed;
+  top: 5vh;
   right: 0;
-  width: 400px;
-  height: 500px;
   background-color: $secondary-dark;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,47 +80,21 @@
   transform: translateX(100%);
   opacity: 0;
   transition: transform 1s ease, opacity 1s ease;
-  
+  z-index: 1000;
+
 
   &.active {
     transform: scale(1);
     opacity: 1;
   }
   
-  &::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, rgba($primary-color, 0.1) 0%, rgba($primary-color, 0) 70%);
-    border-radius: 50%;
-    z-index: 0;
-  }
+
   
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -80px;
-    left: -80px;
-    width: 160px;
-    height: 160px;
-    background: radial-gradient(circle, rgba($primary-color, 0.1) 0%, rgba($primary-color, 0) 70%);
-    border-radius: 50%;
-    z-index: 0;
-  }
-  
-  @include respond-to(sm) {
-    // width: 500px;
-    // height: 600px;
-    // bottom: 70px;
-  }
+ 
 }
 
 // Chatbot Header
 .chatbot-header {
-  height: 70px;
   padding: 0 30px;
   background-color: rgba($secondary-color, 0.5);
   display: flex;
@@ -128,6 +103,7 @@
   border-bottom: 1px solid rgba($accent-dark, 0.2);
   position: relative;
   z-index: 1;
+  
   
   .chatbot-avatar {
     width: 40px;
@@ -145,7 +121,6 @@
   
   .chatbot-info {
     flex: 1;
-    
     h3 {
       font-family: $font-primary;
       font-size: 18px;
@@ -190,12 +165,35 @@
 
 .chatbot-wrapper{
     position: relative;
-    height:calc(500px - 70px);
     flex: 1;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba($primary-color, 0.1) 0%, rgba($primary-color, 0) 70%);
+      border-radius: 50%;
+      z-index: 3;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: -40px;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba($primary-color, 0.1) 0%, rgba($primary-color, 0) 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
 }
 
 // Chatbot Messages
 .chatbot-messages  {
+  font-family: $font-secondary;
   flex: 1;
   padding: 15px;
   overflow-y: auto;
@@ -203,8 +201,7 @@
   flex-direction: column;
   gap: 15px;
   z-index: 1;
-  height: calc(100% - 70px);
-
+  height: 100%;
   
   &::-webkit-scrollbar {
     width: 6px;
@@ -362,22 +359,29 @@
 
 // Chatbot Suggestions
 .chatbot-topics , .chatbot-questions {
+  position: relative;
   padding:0  15px;
-  position: absolute !important;
-  height: 60px;
   bottom: 0;
   left: 0;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: start;
   background-color: rgba($secondary-color, 0.9);
   z-index: 1;
-  overflow-x: auto;
+  overflow: auto hidden;
   &::-webkit-scrollbar {
-    height: 0;
-    display: none;
+    height: 13px ;
   }
+  
+  &::-webkit-scrollbar-track {
+    background: rgba($secondary-color, 0.3);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($accent-dark, 0.5);
+    border-radius: 3px;
+  }
+  
 
   .topic-btn, .question-btn {
     padding: 8px 15px;
@@ -395,10 +399,7 @@
   position: relative;
   z-index: 1;
   
-  &::-webkit-scrollbar {
-    height: 0;
-    display: none;
-  }
+
   
 }
 .topic-btn ,.question-btn{
@@ -511,3 +512,33 @@
   display: inline-block;
   line-height: 1.4;
 }
+
+.chatbot-container{
+  width: 400px;
+  height: 80vh;
+  @include respond-to(md) {
+    height: calc(100vh - 100px);
+
+  }
+  @include respond-to(sm) {
+    width: 90%;
+    height: calc(100vh - 70px);
+  }
+}
+.chatbot-header{
+  height: 100px;
+}
+.chatbot-wrapper{
+  height: calc(80vh - 100px);
+  display: grid;
+  grid-template-rows: 1fr 60px;
+  @include respond-to(md) {
+      height:calc(100vh - 100px - 70px);
+  }
+
+}
+  
+  .chatbot-topics,.chatbot-questions{
+    height: 100%;
+
+  }

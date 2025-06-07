@@ -174,7 +174,7 @@ class Chatbot {
           // Then animate container in
           gsap.fromTo(this.container, {
             opacity: 0,
-            x:100,
+            x:400,
            
           },{
             opacity: 1,
@@ -198,7 +198,7 @@ class Chatbot {
       // Minimize chat - animate container out first
       gsap.to(this.container, {
         opacity: 0,
-        x:200,
+        x:400,
         duration: 0.3,
         ease: "power3.in",
         onComplete: () => {
