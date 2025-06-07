@@ -1,7 +1,33 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from 'lenis'
+// main.js
+import SmoothScroll from './utils'
 
+const smoothScroll = new SmoothScroll()
+
+window.smoothScroll = smoothScroll
+
+// Initialize Lenis
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  orientation: 'vertical',
+  gestureOrientation: 'vertical',
+  smoothWheel: true,
+  wheelMultiplier: 1,
+  touchMultiplier: 2,
+  infinite: false,
+})
+
+// Animation frame loop
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
 
 gsap.registerPlugin(ScrollTrigger);
 document.addEventListener("DOMContentLoaded", function () {
