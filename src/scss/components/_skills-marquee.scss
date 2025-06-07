@@ -1,8 +1,8 @@
 .skills-marquee {
     width: 100%;
-    margin: 12px 0;
+    margin: 50px 0 0 0;
     overflow: hidden;
-    background: $secondary-dark;
+    background: radial-gradient(100% 100%,$primary-darker, transparent);
     padding: $spacing-md 0;
     position: relative;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -121,9 +121,7 @@
   
   @include respond-to(sm) {
     .skills-marquee {
-      .marquee-track {
-        animation-duration: 10s; // Faster on small screens
-      }
+    
       
       span {
         font-size: 0.9rem;

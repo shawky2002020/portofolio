@@ -28,11 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Update cursor style based on hover state
         if (hasPointerCursor && !isHoveringClickable) {
           isHoveringClickable = true;
-          console.log('Hovering clickable element');
           cursor.classList.add('cursor-hover');
         } else if (!hasPointerCursor && isHoveringClickable) {
           isHoveringClickable = false;
-          console.log('Left clickable element');
           cursor.classList.remove('cursor-hover');
         }
         

@@ -1,10 +1,9 @@
 .skills {
   padding-top: $spacing-xl * 2;
-  padding-bottom: $spacing-xl * 2;
+  padding-bottom: 0;
   // background-color: $secondary-color;
   position: relative;
   overflow: hidden;
-  padding-inline: 0 !important;;
   &::before {
     content: '<skills>';
     position: absolute;
@@ -24,6 +23,11 @@
     color: rgba($primary-color, 0.1);
     font-size: 1.2rem;
   }
+ @include respond-to(sm) {
+    padding: 8px;
+  }
+
+ 
 }
 
 .skills-header {
@@ -79,6 +83,13 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
+  @include respond-to(lg) {
+    margin-bottom: $spacing-lg;
+  }
+  @include respond-to(md) {
+    padding: 10px;
+    margin-bottom: $spacing-md;
+  }
   
   &.technical {
     border-left: 4px solid $primary-color;
@@ -311,8 +322,7 @@
   flex: 1;
   
   h5 {
-    font-family: $font-primary;
-    font-size: 1.1rem;
+    font-family: $font-secondary;
     color: $white;
     margin-bottom: $spacing-xs;
   }
@@ -347,7 +357,7 @@
 // Radar chart container
 .skill-radar-container {
   position: relative;
-  width: 100%;
+  width: 300px;
   height: 300px;
   margin: 0 auto;
 }
@@ -497,14 +507,8 @@
 
 // Responsive adjustments
 @media (max-width: $breakpoint-md ) {
-  .skills {
-    padding-left: $spacing-lg;
-    padding-right: $spacing-lg;
-  }
   
-  .skills-container {
-    gap: $spacing-xl;
-  }
+
   
   .skill-tooltip {
     max-width: 150px;

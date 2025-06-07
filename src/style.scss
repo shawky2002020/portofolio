@@ -18,8 +18,9 @@
 @import "scss/pages/hero";
 @import "scss/pages/education";
 @import "scss/pages/about";
-@import "scss/pages/projects"; // If you've already added this
-@import "scss/pages/skills"; // Add this line
+@import "scss/pages/testimonials"; // Add this line
+@import "scss/pages/projects";
+@import "scss/pages/skills";
 @import "scss/pages/contact"; // Uncomment this line
 
 // Import components
@@ -29,134 +30,78 @@
 @import "scss/components/skills-marquee";
 // @import "scss/components/cards";
 // @import "scss/components/forms";
-body{
+body {
   background: #000;
   color: whitesmoke;
   width: 100vw;
-  overflow-x: hidden;
-}
-main{
-  width: 100vw;
-}
-
-
-section{
-  min-height: 100vh;
-  width: 100vw;
-  padding: 0 120px;
-
-}
-.quote-container{
-  position: relative;
-  width: 100%;
-  min-height: 120vh;
-  background: $primary-darker;
-  display:flex ;
-  flex-flow: column nowrap;
-  align-items: start;
-  justify-content: center;
-  gap: 100px;
-
-
-}
-.quote{
-  max-width: 100%;
-  color: $secondary-color;
-  font-size: 90px;
-  position: relative;
-  .fill {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-
-    span {
-      overflow: hidden;
-      display: block;
-
-      .fill-text {
-        color: white;
-        display: block;
-        width: 0%; // will animate
-        white-space: nowrap;
-        margin: 0;
-        padding: 0;
-      }
-    }
-  }
- 
- 
-}
-.quote-footer{
-  overflow: hidden;
-}
-// Import abstracts
-@import "scss/abstracts/variables";
-@import "scss/abstracts/mixins";
-@import "scss/abstracts/functions";
-
-// Import base styles
-@import "scss/base/reset";
-@import "scss/base/typography";
-@import "scss/base/animations";
-
-// Import layout components
-@import "scss/layout/header";
-// @import "scss/layout/navigation";
-// @import "scss/layout/footer";
-// @import "scss/layout/grid";
-
-// Import page-specific styles
-@import "scss/pages/hero";
-@import "scss/pages/education";
-@import "scss/pages/about";
-@import "scss/pages/projects"; // Uncomment this line
-// @import "scss/pages/contact";
-
-// Import components
-@import "scss/components/buttons";
-@import "scss/components/chatbot";
-@import "scss/components/cursor";
-// @import "scss/components/cards";
-// @import "scss/components/forms";
-body{
-  background: #000;
-  color: whitesmoke;
-  width: 100vw;
-  overflow-x: hidden;
   cursor: none;
+  overflow-x: hidden;
 }
-
-
-main{
+main {
   width: 100vw;
 }
 
-
-section{
+section {
   min-height: 100vh;
   width: 100vw;
   padding: 0 120px;
-
 }
-.quote-container{
+.quote-container {
   position: relative;
   width: 100%;
-  min-height: 120vh;
+  min-height: 100vh;
   background: $primary-darker;
-  display:flex ;
+  display: flex;
   flex-flow: column nowrap;
   align-items: start;
   justify-content: center;
   gap: 100px;
-
-
+  @include respond-to(xl) {
+    padding: 0 60px;
+  }
+  @include respond-to(lg) {
+    padding: 0 40px;
+  }
+  @include respond-to(md) {
+    padding: 0 30px;
+  }
+  @include respond-to(sm) {
+    padding: 0 20px;
+    // min-height: 400px;
+  }
 }
-.quote{
+.quote {
   max-width: 100%;
+  margin-top: 10vh;
+  margin: auto;
   color: $secondary-color;
   font-size: 90px;
   position: relative;
+  @include respond-to(xxl) {
+    font-size: 70px !important;
+    padding: 0 !important;
+  }
+  @include respond-to(xl) {
+    font-size: 55px !important;
+    padding: 0 !important;
+  }
+  @include respond-to(lg) {
+    font-size: 45px !important;
+  }
+  @include respond-to(md) {
+    font-size: 35px !important;
+  }
+  @include respond-to(sm) {
+    font-size: 35px !important;
+  }
+  @include respond-to(mobile) {
+    font-size: 29px !important;
+  }
+  span {
+    display: block;
+    white-space: nowrap;
+  }
+
   .fill {
     position: absolute;
     top: 0;
@@ -177,9 +122,8 @@ section{
       }
     }
   }
- 
- 
 }
-.quote-footer{
+.quote-footer {
   overflow: hidden;
+  margin-bottom: 10vh;
 }

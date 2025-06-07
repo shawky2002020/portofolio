@@ -32,7 +32,11 @@ a {
   
  
 }
-
+.desktop{
+  @include respond-to(lg){
+    display: none !important;
+  }
+}
 ul, ol {
   list-style: none;
 }

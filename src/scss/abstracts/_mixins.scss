@@ -1,6 +1,9 @@
 // Media query mixins
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == sm {
+  @if $breakpoint == mobile {
+    @media (max-width: $breakpoint-mobile) { @content; }
+  }
+  @else if $breakpoint == sm {
     @media (max-width: $breakpoint-sm) { @content; }
   } @else if $breakpoint == md {
     @media (max-width: $breakpoint-md) { @content; }
@@ -8,6 +11,9 @@
     @media (max-width: $breakpoint-lg) { @content; }
   } @else if $breakpoint == xl {
     @media (max-width: $breakpoint-xl) { @content; }
+  }
+  @else if $breakpoint == xxl {
+    @media (max-width: $breakpoint-xxl) { @content; }
   }
 }
 

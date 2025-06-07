@@ -11,37 +11,97 @@ class Chatbot {
     // Knowledge Base - now grouped by topic with questions
     this.knowledgeBase = {
       portfolio: [
-        { q: "What is this portfolio about?", a: "This portfolio showcases Shawky's skills in full-stack development and his passion for karate. Feel free to explore the different sections!" },
-        { q: "Who created this portfolio?", a: "Shawky, a full-stack developer and national karate player, created this portfolio to share his journey." }
+        {
+          q: "What is this portfolio about?",
+          a: "This portfolio showcases Shawky's journey as a full-stack developer and professional athlete. From clean code to karate kicks, it’s all in here!"
+        },
+        {
+          q: "Who created this portfolio?",
+          a: "Shawky Ahmad, a MEAN stack developer and Egyptian national karate champion, created this portfolio to blend tech and tenacity."
+        }
       ],
       skills: [
-        { q: "What are Shawky's main skills?", a: "Shawky is proficient in JavaScript, React, Angular, Node.js, and Python. He's also a black belt in karate!" },
-        { q: "Does Shawky have soft skills?", a: "Absolutely! Communication, teamwork, and discipline are among his top soft skills." }
+        {
+          q: "What are Shawky's main skills?",
+          a: "Shawky is skilled in JavaScript, Angular, Node.js, Python, MongoDB, and Express. He also builds intuitive UIs and writes clean backend logic."
+        },
+        {
+          q: "Does Shawky have soft skills?",
+          a: "Absolutely! Shawky excels in communication, leadership, adaptability, and has discipline sharpened by years of karate training."
+        }
       ],
       contact: [
-        { q: "How can I contact Shawky?", a: "You can contact Shawky through the contact form in the Contact section. He responds faster than his karate reflexes!" },
-        { q: "Is Shawky available for hire?", a: "Yes! Shawky is open to freelance and full-time opportunities." }
+        {
+          q: "How can I contact Shawky?",
+          a: "Use the contact form or reach out via LinkedIn or email. He responds faster than his roundhouse kick!"
+        },
+        {
+          q: "Is Shawky available for hire?",
+          a: "Yes! Shawky is open to freelance, part-time, and full-time opportunities in web development or tech instruction."
+        }
       ],
       karate: [
-        { q: "What is Shawky's karate background?", a: "Shawky is an Egyptian national karate player and represents Al Ahly club professionally." },
-        { q: "How does karate help with coding?", a: "The discipline and focus from karate translate directly to debugging and problem-solving in code!" }
+        {
+          q: "What is Shawky's karate background?",
+          a: "Shawky is a professional karate player on the Egyptian National Team and Al Ahly Club's first team with multiple championship medals."
+        },
+        {
+          q: "How does karate help with coding?",
+          a: "Karate instills discipline, focus, and strategy—all of which Shawky applies to debugging, problem-solving, and team collaboration."
+        }
       ],
       projects: [
-        { q: "Where can I see Shawky's projects?", a: "Check out the Projects section for a showcase of Shawky's work." }
+        {
+          q: "Where can I see Shawky's projects?",
+          a: "Head over to the Projects section to explore his web apps, landing pages, AI integrations, and more."
+        },
+        {
+          q: "What kind of projects has Shawky built?",
+          a: "From eCommerce platforms and expense trackers to smart AI games and medical AI tools—Shawky’s code covers it all."
+        }
       ],
       education: [
-        { q: "What did Shawky study?", a: "Shawky studied Computer and Systems Engineering at Ain Shams University." }
+        {
+          q: "What did Shawky study?",
+          a: "Shawky studied Computer and Systems Engineering at Ain Shams University, blending software with solid systems knowledge."
+        },
+        {
+          q: "Did Shawky take any certifications?",
+          a: "Yes! Shawky earned certifications in MEAN stack development, AI career essentials, and responsive web design."
+        }
       ],
       experience: [
-        { q: "What is Shawky's work experience?", a: "Shawky has professional experience in full-stack development, both freelance and corporate." }
+        {
+          q: "What is Shawky's work experience?",
+          a: "Shawky has experience as a full-stack developer, part-time programming instructor, and freelancer, building real-world applications."
+        },
+        {
+          q: "Has Shawky worked with teams?",
+          a: "Yes! Shawky has collaborated on projects, managed tasks in dev teams, and guided students as a coding mentor."
+        }
       ],
       achievements: [
-        { q: "Has Shawky won any awards?", a: "Yes! Shawky has won coding competitions and karate championships." }
+        {
+          q: "Has Shawky won any awards?",
+          a: "Definitely. Shawky has clinched medals in national karate championships and earned bonus marks and praise in AI coursework."
+        },
+        {
+          q: "What’s Shawky most proud of?",
+          a: "Combining tech and sports at a high level—delivering polished apps while competing professionally in karate."
+        }
       ],
       hobbies: [
-        { q: "What are Shawky's hobbies?", a: "Besides karate and coding, Shawky enjoys photography, hiking, and reading." }
+        {
+          q: "What are Shawky's hobbies?",
+          a: "Coding, karate, photography, hiking, and reading. He also enjoys learning new frameworks just for fun!"
+        },
+        {
+          q: "Is Shawky into design?",
+          a: "Yes! Shawky has a strong eye for UI/UX and enjoys crafting sleek, responsive interfaces."
+        }
       ]
     };
+    
 
     // Initialize DOM elements and setup after DOM is ready
     this.initializeDOM();
@@ -174,7 +234,7 @@ class Chatbot {
           // Then animate container in
           gsap.fromTo(this.container, {
             opacity: 0,
-            x:100,
+            x:400,
            
           },{
             opacity: 1,
@@ -198,7 +258,7 @@ class Chatbot {
       // Minimize chat - animate container out first
       gsap.to(this.container, {
         opacity: 0,
-        x:200,
+        x:400,
         duration: 0.3,
         ease: "power3.in",
         onComplete: () => {
