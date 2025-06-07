@@ -4,7 +4,7 @@
   // background-color: $secondary-color;
   position: relative;
   overflow: hidden;
-  
+  padding-inline: 0 !important;;
   &::before {
     content: '<skills>';
     position: absolute;
@@ -61,14 +61,13 @@
 
 .skills-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: $spacing-xl * 2;
   max-width: 1200px;
   margin: 0 auto;
   
   @include respond-to(lg) {
-    flex-direction: row;
-    align-items: stretch;
+    flex-direction: column;
   }
 }
 
@@ -471,6 +470,30 @@
     }
   }
 }
+
+
+.text-slider {
+  overflow: hidden;
+  white-space: nowrap;
+  background: #000;
+  color: #fff;
+  padding: 10px 0;
+  font-size: 16px;
+  position: relative;
+}
+
+.slide-track {
+  display: inline-block;
+  padding-left: 100%;
+  animation: slideText 20s linear infinite;
+}
+
+@keyframes slideText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+
 
 // Responsive adjustments
 @media (max-width: $breakpoint-md ) {

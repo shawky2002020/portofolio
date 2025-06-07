@@ -22,11 +22,30 @@ $white: #ffffffff;
 // Typography
 $font-primary:milk, 'Helvetica Neue', Arial, sans-serif;
 $font-secondary:'poppins',milk;
+// Base font sizes
 $font-size-base: 16px;
+
+// Desktop font sizes (default)
 $font-size-h1: 60px;
 $font-size-h2: 50px;
 $font-size-h3: 30px;
 $font-size-h4: 20px;
+
+// Tablet font sizes (md)
+$font-size-h1-md: 48px;
+$font-size-h2-md: 40px;
+$font-size-h3-md: 24px;
+$font-size-h4-md: 18px;
+$font-size-base-md: 12px;
+
+
+// Mobile font sizes (sm)
+$font-size-h1-sm: 36px;
+$font-size-h2-sm: 30px;
+$font-size-h3-sm: 20px;
+$font-size-h4-sm: 16px;
+$font-size-base-sm: 10px;
+
 
 // Spacing
 $spacing-xs: 0.25rem;

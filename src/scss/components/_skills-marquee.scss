@@ -1,0 +1,138 @@
+.skills-marquee {
+    width: 100%;
+    margin: 12px 0;
+    overflow: hidden;
+    background: $secondary-dark;
+    padding: $spacing-md 0;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+   
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      z-index: 2;
+    }
+   
+    &::before {
+      left: 0;
+      background: linear-gradient(to right, $primary-darkest, transparent);
+    }
+   
+    &::after {
+      right: 0;
+      background: linear-gradient(to left, $primary-darkest, transparent);
+    }
+   
+    .marquee-track {
+      display: flex;
+      width: max-content; // Important: Let it size naturally
+      animation: marquee 17s linear infinite; // Slower for better readability
+     
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+   
+    .marquee-content {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      flex-shrink: 0; // Prevent shrinking
+      
+      // Each content block should have the same width
+      &:first-child {
+        padding-right: 2rem; // Add some spacing between loops
+      }
+    }
+   
+    span {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1.5rem;
+      margin: 0 0.5rem;
+      font-family: $font-secondary;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: $accent-light;
+      background: rgba($secondary-color, 0.7);
+      border-radius: 30px;
+      border-left: 3px solid $primary-color;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      flex-shrink: 0; // Prevent shrinking
+     
+      i {
+        margin-right: 0.5rem;
+        color: $primary-color;
+        font-size: 1.1rem;
+      }
+     
+      &:hover {
+        transform: translateY(-3px);
+        background: rgba($primary-darker, 0.9);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        border-left: 3px solid $accent-light;
+       
+        i {
+          color: $accent-light;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+  
+  // Fixed keyframes - moves by exactly 50% to create seamless loop
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); // This is correct for duplicate content
+    }
+  }
+  
+  // Alternative approach with calculated width (more precise)
+  @keyframes marquee-precise {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% / 2)); // Explicitly show it's half
+    }
+  }
+  
+  // Responsive adjustments
+  @include respond-to(md) {
+    .skills-marquee {
+      .marquee-track {
+        animation-duration: 14s; // Slightly faster on medium screens
+      }
+      
+      span {
+        font-size: 1rem;
+        padding: 0.4rem 1.2rem;
+      }
+    }
+  }
+  
+  @include respond-to(sm) {
+    .skills-marquee {
+      .marquee-track {
+        animation-duration: 10s; // Faster on small screens
+      }
+      
+      span {
+        font-size: 0.9rem;
+        padding: 0.3rem 1rem;
+        margin: 0 0.3rem;
+       
+        i {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }

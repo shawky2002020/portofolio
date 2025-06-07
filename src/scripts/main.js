@@ -30,6 +30,8 @@ function raf(time) {
 requestAnimationFrame(raf)
 
 gsap.registerPlugin(ScrollTrigger);
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const navIcon = document.querySelector(".nav-icon");
   const navList = document.querySelector(".nav-list");
@@ -381,6 +383,55 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// Skills Marquee Animation
+function initSkillsMarquee() {
+  const marqueeTrack = document.querySelector('.marquee-track');
+  const skillSpans = document.querySelectorAll('.skills-marquee span');
+  
+  if (marqueeTrack && skillSpans.length) {
+    // Random starting positions for skill items
+    skillSpans.forEach(span => {
+      gsap.from(span, {
+        y: -30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+        delay: Math.random() * 1.5,
+        scrollTrigger: {
+          trigger: '.skills-marquee',
+          start: "top 90%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+    
+    // Hover effect for each skill
+    skillSpans.forEach(span => {
+      span.addEventListener('mouseenter', () => {
+        const icon = span.querySelector('i');
+        gsap.to(icon, {
+          rotation: 360,
+          scale: 1.2,
+          color: "#ffffff",
+          duration: 0.5,
+          ease: "back.out(1.7)"
+        });
+      });
+      
+      span.addEventListener('mouseleave', () => {
+        const icon = span.querySelector('i');
+        gsap.to(icon, {
+          rotation: 0,
+          scale: 1,
+          color: "#e5383b",
+          duration: 0.5,
+          ease: "power2.out"
+        });
+      });
+    });
+  }
+}
+
 
 
 // Helper function to convert hex to rgb
@@ -639,6 +690,7 @@ function createRadarChart() {
 
 // Initialize all animations when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+  initSkillsMarquee();
   const t3 = gsap.timeline({
     scrollTrigger: {
       trigger: ".projects",
