@@ -702,6 +702,63 @@
       </div>
    
     </main>
-    <script type="module" src="/src/main.js"></script>
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget">
+      <div class="chatbot-toggle">
+        <div class="toggle-icon">
+          <i class="fas fa-comment-dots"></i>
+        </div>
+        <!-- <div class="toggle-badge">1</div> -->
+      </div>
+      
+      <div class="chatbot-container">
+        <div class="chatbot-header">
+          <div class="chatbot-avatar">
+            <img src="assets/imgs/me.png" alt="Karate Bot" />
+          </div>
+          <div class="chatbot-info">
+            <h3>Shawkybot</h3>
+            <p>Your coding & karate assistant</p>
+          </div>
+          <div class="chatbot-controls">
+           
+            <button class="control-btn close">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="chatbot-wrapper">
+
+          <div class="chatbot-messages">
+            <!-- Messages will be added here dynamically -->
+          </div>
+          
+        <div class="chatbot-topics">
+          <p class="select-text">Select a topic:</p>
+          <button class="topic-btn" data-topic="portfolio">Portfolio</button>
+          <button class="topic-btn" data-topic="skills">Skills</button>
+          <button class="topic-btn" data-topic="contact">Contact</button>
+          <button class="topic-btn" data-topic="karate">Karate</button>
+          <button class="topic-btn" data-topic="projects">Projects</button>
+          <button class="topic-btn" data-topic="education">Education</button>
+          <button class="topic-btn" data-topic="experience">Experience</button>
+          <button class="topic-btn" data-topic="achievements">Achievements</button>
+          <button class="topic-btn" data-topic="hobbies">Hobbies</button>
+          <!-- Add more topics as needed -->
+        </div>
+        <div class="chatbot-questions" style="display:none">
+          <p class="select-text">Select a question:</p>
+          <!-- Question buttons will be dynamically inserted here based on topic selection -->
+        </div>
+
+        </div>
+
+
+          
+      </div>
+    </div>
   </body>
+  <script type="module" src="/src/scripts/main.js"></script>
+  <script type="module" src="/src/scripts/chatbot.js" defer></script>
+  
 </html>
