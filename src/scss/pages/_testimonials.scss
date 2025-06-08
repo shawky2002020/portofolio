@@ -74,6 +74,7 @@
 
 .testimonial-card {
   display: none;
+  height: 420px;
   background: rgba($white, 0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba($white, 0.1);
@@ -270,7 +271,7 @@
       border-color: rgba($primary-color, 0.3);
     }
     
-    .stat-number {
+    .stat-number , .support-item > span {
       font-family: $font-primary;
       font-size: 36px;
       font-weight: 700;
@@ -284,6 +285,13 @@
       color: $accent-color;
       text-transform: uppercase;
       letter-spacing: 1px;
+    }
+
+    .support-item{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
     }
   }
 }

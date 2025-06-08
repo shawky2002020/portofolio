@@ -44,9 +44,9 @@
       flex-shrink: 0; // Prevent shrinking
       
       // Each content block should have the same width
-      &:first-child {
-        padding-right: 2rem; // Add some spacing between loops
-      }
+      // &:first-child {
+      //   padding-right: 2rem; // Add some spacing between loops
+      // }
     }
    
     span {
