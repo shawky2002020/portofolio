@@ -1121,7 +1121,7 @@ class TestimonialsSlider {
     this.stopAutoSlide();
     this.autoSlideInterval = setInterval(() => {
       this.nextSlide();
-    }, 5000); // Change slide every 5 seconds
+    }, 8000); // Change slide every 5 seconds
   }
   
   stopAutoSlide() {

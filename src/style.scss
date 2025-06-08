@@ -37,6 +37,13 @@ body {
   cursor: none;
   overflow-x: hidden;
 }
+body.no-scroll {
+  
+  overflow: hidden;
+  touch-action: none; /* Prevents mobile scrolling */
+  position: relative; /* Keeps current position */
+}
+
 main {
   width: 100vw;
 }

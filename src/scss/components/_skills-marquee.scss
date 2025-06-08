@@ -30,7 +30,7 @@
     .marquee-track {
       display: flex;
       width: max-content; // Important: Let it size naturally
-      animation: marquee 17s linear infinite; // Slower for better readability
+      animation: marquee-precise 17s linear infinite; // Slower for better readability
      
       &:hover {
         animation-play-state: paused;

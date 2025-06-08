@@ -1,4 +1,5 @@
 import { gsap } from "gsap";
+let scrollY = 0;
 
 class Chatbot {
   constructor() {
@@ -213,6 +214,21 @@ class Chatbot {
     }, 1000 + Math.random() * 1000);
   }
 
+  
+
+ openChatbot() {
+  // scrollY = window.scrollY;
+  // document.body.style.top = `-${scrollY}px`;
+  document.body.classList.add('no-scroll');
+}
+
+ closeChatbot() {
+  document.body.classList.remove('no-scroll');
+  // document.body.style.top = '';
+  // window.scrollTo(0, scrollY); // restore scroll position
+}
+
+
   toggleChat() {
     if (!this.toggle || !this.container) return;
 
@@ -221,6 +237,8 @@ class Chatbot {
     if (this.isOpen) {
       // Set initial state for container before animation
       this.toggle.classList.add("active");
+      this.openChatbot()
+
 
 
       // Open chat - hide toggle first
@@ -254,6 +272,7 @@ class Chatbot {
       });
     } else {
         this.container.classList.remove("active");
+        this.closeChatbot()
 
       // Minimize chat - animate container out first
       gsap.to(this.container, {
