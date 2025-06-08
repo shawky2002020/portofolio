@@ -83,6 +83,16 @@
           animation: animateGradient 4s infinite alternate;
         }
       }
+      .hero-btn{
+        padding: 8px 10px;
+        border-radius: 0.5rem;
+        background: $primary-darkest;
+        color: $accent-color;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            background: $primary-dark;
+        }
+      }
       
 }
 @property --start-color {

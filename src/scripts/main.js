@@ -31,6 +31,11 @@ requestAnimationFrame(raf)
 
 gsap.registerPlugin(ScrollTrigger);
 
+function scrollToSection(sectionId) {
+  document.getElementById(sectionId).scrollIntoView({
+    behavior: 'smooth'
+  });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   const navIcon = document.querySelector(".nav-icon");
@@ -43,16 +48,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const navLinks = document.querySelectorAll(".nav-list li a");
 
+  function scrollToSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
   navLinks.forEach((link) => {
     link.addEventListener("click", function () {
+      scrollToSection(link.getAttribute("href").substring(1));
+      navIcon.classList.toggle("close");
       navList.classList.remove("show");
+
     });
   });
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".quote",
-      start:"-350px 450px",
-      end: "20% 10%",
+      start:"-350px 250px",
+      end: "90% 10%",
       scrub: 1, // Remove this if you want fixed timing
     },
   });
@@ -75,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
      duration: 1 ,
      scrollTrigger: {
        trigger: ".quote",
-       start: "200% 80%",
+       start: "150% 80%",
        end: "250% 20%",
       //  markers:true,
        toggleActions: "play none none reverse", // Add this for debugging
@@ -767,70 +780,6 @@ const contactTimeline = gsap.timeline({
   }
 });
 
-contactTimeline
-  .from(".contact-header", {
-    y: 50,
-    opacity: 0,
-    duration: 0.8,
-    ease: "power3.out"
-  })
-  .from(".contact-intro", {
-    y: 30,
-    opacity: 0,
-    duration: 0.6,
-    ease: "power3.out"
-  }, "-=0.4")
-  .from(".contact-method", {
-    opacity: 0,
-    stagger: 0.2,
-    duration: 0.6,
-    ease: "back.out(1.7)"
-  }, "-=0.4")
-  .from(".social-links", {
-    y: 30,
-    opacity: 0,
-    duration: 0.6,
-    ease: "power3.out"
-  }, "-=0.4")
-  .from(".contact-form-container", {
-    x: 50,
-    opacity: 0,
-    duration: 0.8,
-    ease: "back.out(1.7)"
-  }, "-=0.6")
-  .from(".contact-quote", {
-    y: 30,
-    opacity: 0,
-    duration: 0.8,
-    ease: "power3.out"
-  }, "-=0.4");
-
-// Form input animations
-const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
-if (formInputs) {
-  formInputs.forEach(input => {
-    input.addEventListener('focus', () => {
-      gsap.to(input, {
-        borderColor: '#e5383b',
-        boxShadow: '0 0 0 3px rgba(229, 56, 59, 0.2)',
-        duration: 0.3,
-        ease: "power2.out"
-      });
-    });
-    
-    input.addEventListener('blur', () => {
-      if (!input.value) {
-        gsap.to(input, {
-          borderColor: 'rgba(177, 167, 166, 0.3)',
-          boxShadow: 'none',
-          duration: 0.3,
-          ease: "power2.out"
-        });
-      }
-    });
-  });
-}
-
 // Social icon hover animations
 const socialIcons = document.querySelectorAll('.social-icon');
 if (socialIcons) {
@@ -855,112 +804,245 @@ if (socialIcons) {
   });
 }
 
-// Form submission animation
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+// contactTimeline
+//   .from(".contact-header", {
+//     y: 50,
+//     opacity: 0,
+//     duration: 0.8,
+//     ease: "power3.out"
+//   })
+//   .from(".contact-intro", {
+//     y: 30,
+//     opacity: 0,
+//     duration: 0.6,
+//     ease: "power3.out"
+//   }, "-=0.4")
+//   .from(".contact-method", {
+//     opacity: 0,
+//     stagger: 0.2,
+//     duration: 0.6,
+//     ease: "back.out(1.7)"
+//   }, "-=0.4")
+//   .from(".social-links", {
+//     y: 30,
+//     opacity: 0,
+//     duration: 0.6,
+//     ease: "power3.out"
+//   }, "-=0.4")
+//   .from(".contact-form-container", {
+//     x: 50,
+//     opacity: 0,
+//     duration: 0.8,
+//     ease: "back.out(1.7)"
+//   }, "-=0.6")
+//   .from(".contact-quote", {
+//     y: 30,
+//     opacity: 0,
+//     duration: 0.8,
+//     ease: "power3.out"
+//   }, "-=0.4");
+
+// // Form input animations
+// const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
+// if (formInputs) {
+//   formInputs.forEach(input => {
+//     input.addEventListener('focus', () => {
+//       gsap.to(input, {
+//         borderColor: '#e5383b',
+//         boxShadow: '0 0 0 3px rgba(229, 56, 59, 0.2)',
+//         duration: 0.3,
+//         ease: "power2.out"
+//       });
+//     });
     
-    // Simulate form submission
-    const submitBtn = this.querySelector('.submit-btn');
-    const btnText = submitBtn.querySelector('.btn-text');
-    const btnIcon = submitBtn.querySelector('i');
+//     input.addEventListener('blur', () => {
+//       if (!input.value) {
+//         gsap.to(input, {
+//           borderColor: 'rgba(177, 167, 166, 0.3)',
+//           boxShadow: 'none',
+//           duration: 0.3,
+//           ease: "power2.out"
+//         });
+//       }
+//     });
+//   });
+// }
+
+
+
+// // Form submission animation
+// const contactForm = document.querySelector('.contact-form');
+// if (contactForm) {
+//   contactForm.addEventListener('submit', function(e) {
+//     e.preventDefault();
     
-    // Disable button
-    submitBtn.disabled = true;
+//     // Simulate form submission
+//     const submitBtn = this.querySelector('.submit-btn');
+//     const btnText = submitBtn.querySelector('.btn-text');
+//     const btnIcon = submitBtn.querySelector('i');
     
-    // Show loading state
-    gsap.to(btnText, {
-      opacity: 0,
-      y: -10,
-      duration: 0.3,
-      ease: "power2.in",
-      onComplete: () => {
-        btnText.textContent = "Sending...";
-        gsap.to(btnText, {
-          opacity: 1,
-          y: 0,
-          duration: 0.3,
-          ease: "power2.out"
-        });
-      }
-    });
+//     // Disable button
+//     submitBtn.disabled = true;
     
-    gsap.to(btnIcon, {
-      rotation: 360,
-      repeat: 2,
-      duration: 0.8,
-      ease: "power1.inOut"
-    });
+//     // Show loading state
+//     gsap.to(btnText, {
+//       opacity: 0,
+//       y: -10,
+//       duration: 0.3,
+//       ease: "power2.in",
+//       onComplete: () => {
+//         btnText.textContent = "Sending...";
+//         gsap.to(btnText, {
+//           opacity: 1,
+//           y: 0,
+//           duration: 0.3,
+//           ease: "power2.out"
+//         });
+//       }
+//     });
     
-    // Simulate API call
-    setTimeout(() => {
-      // Show success state
-      gsap.to(btnText, {
-        opacity: 0,
-        y: -10,
-        duration: 0.3,
-        ease: "power2.in",
-        onComplete: () => {
-          btnText.textContent = "Message Sent!";
-          btnIcon.className = "fas fa-check";
-          submitBtn.style.backgroundColor = "#4CAF50";
+//     gsap.to(btnIcon, {
+//       rotation: 360,
+//       repeat: 2,
+//       duration: 0.8,
+//       ease: "power1.inOut"
+//     });
+//     function sendEmail() {
+//       // Get form element and check validity
+//       const contactForm = document.getElementById('contactForm');
+//       if (!contactForm.checkValidity()) return;
+      
+//       // Set loading state
+//       const loading = true;
+      
+//       // Get form data
+//       const formData = new FormData(contactForm);
+//       const templateParams = {
+//           from_name: formData.get('name'),
+//           from_email: formData.get('email'),  // User's email
+//           subject: formData.get('subject'),
+//           message: formData.get('message')
+//       };
+      
+//       // Send email using EmailJS
+//       emailjs.send(
+//           import.meta.env.VITE_EMAILJS_SERVICE_ID, 
+//           import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
+//           templateParams, 
+//           import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+//       )
+//       .then(() => {
+//           const success = true;
+//           const statusMessage = "Message sent successfully!";
+//           contactForm.reset();
           
-          gsap.to(btnText, {
-            opacity: 1,
-            y: 0,
-            duration: 0.3,
-            ease: "power2.out"
-          });
+//           // Update UI to show success message
+//           displayStatusMessage(statusMessage, success);
+//       })
+//       .catch(() => {
+//           const success = false;
+//           const statusMessage = "Failed to send message. Try again.";
           
-          gsap.to(btnIcon, {
-            scale: 1.2,
-            duration: 0.3,
-            ease: "back.out(1.7)",
-            onComplete: () => {
-              gsap.to(btnIcon, {
-                scale: 1,
-                duration: 0.3,
-                ease: "power2.out"
-              });
-            }
-          });
+//           // Update UI to show error message
+//           displayStatusMessage(statusMessage, success);
+//       })
+//       .finally(() => {
+//           const loading = false;
+//           // Hide loading indicator
+//           toggleLoadingState(loading);
+//       });
+//   }
+  
+//   // Helper function to display status messages
+//   function displayStatusMessage(message, isSuccess) {
+//       const statusElement = document.getElementById('statusMessage');
+//       if (statusElement) {
+//           statusElement.textContent = message;
+//           statusElement.className = isSuccess ? 'success' : 'error';
+//       }
+//   }
+  
+//   // Helper function to toggle loading state
+//   function toggleLoadingState(isLoading) {
+//       const loadingElement = document.getElementById('loadingIndicator');
+//       const submitButton = document.getElementById('submitButton');
+      
+//       if (loadingElement) {
+//           loadingElement.style.display = isLoading ? 'block' : 'none';
+//       }
+//       if (submitButton) {
+//           submitButton.disabled = isLoading;
+//       }
+//   }
+    
+//     // Simulate API call
+//     setTimeout(() => {
+//       // Show success state
+//       gsap.to(btnText, {
+//         opacity: 0,
+//         y: -10,
+//         duration: 0.3,
+//         ease: "power2.in",
+//         onComplete: () => {
+//           btnText.textContent = "Message Sent!";
+//           btnIcon.className = "fas fa-check";
+//           submitBtn.style.backgroundColor = "#4CAF50";
           
-          // Reset form
-          contactForm.reset();
+//           gsap.to(btnText, {
+//             opacity: 1,
+//             y: 0,
+//             duration: 0.3,
+//             ease: "power2.out"
+//           });
           
-          // Reset button after delay
-          setTimeout(() => {
-            gsap.to(submitBtn, {
-              backgroundColor: "#a4161a",
-              duration: 0.5,
-              ease: "power2.inOut"
-            });
+//           gsap.to(btnIcon, {
+//             scale: 1.2,
+//             duration: 0.3,
+//             ease: "back.out(1.7)",
+//             onComplete: () => {
+//               gsap.to(btnIcon, {
+//                 scale: 1,
+//                 duration: 0.3,
+//                 ease: "power2.out"
+//               });
+//             }
+//           });
+          
+//           // Reset form
+//           contactForm.reset();
+          
+//           // Reset button after delay
+//           setTimeout(() => {
+//             gsap.to(submitBtn, {
+//               backgroundColor: "#a4161a",
+//               duration: 0.5,
+//               ease: "power2.inOut"
+//             });
             
-            gsap.to(btnText, {
-              opacity: 0,
-              y: -10,
-              duration: 0.3,
-              ease: "power2.in",
-              onComplete: () => {
-                btnText.textContent = "Send Message";
-                btnIcon.className = "fas fa-paper-plane";
-                submitBtn.disabled = false;
+//             gsap.to(btnText, {
+//               opacity: 0,
+//               y: -10,
+//               duration: 0.3,
+//               ease: "power2.in",
+//               onComplete: () => {
+//                 btnText.textContent = "Send Message";
+//                 btnIcon.className = "fas fa-paper-plane";
+//                 submitBtn.disabled = false;
                 
-                gsap.to(btnText, {
-                  opacity: 1,
-                  y: 0,
-                  duration: 0.3,
-                  ease: "power2.out"
-                });
-              }
-            });
-          }, 3000);
-        }
-      });
-    }, 2000);
-  });
-}
+//                 gsap.to(btnText, {
+//                   opacity: 1,
+//                   y: 0,
+//                   duration: 0.3,
+//                   ease: "power2.out"
+//                 });
+//               }
+//             });
+//           }, 3000);
+//         }
+//       });
+//     }, 2000);
+//   });
+// }
 
 
 // Testimonials Slider Functionality

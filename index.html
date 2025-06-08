@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="/assets/imgs/me.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/style.scss" />
     <title>SAS</title>
@@ -28,26 +28,26 @@
             <span class="bar"></span>
           </div>
           <li class="nav-item">
-            <a href="#" class="nav-link">Home</a>
+            <a href="#home" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">About Me</a>
+            <a href="#education" class="nav-link">Education</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Education</a>
+            <a href="#about" class="nav-link">About Me</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Projects</a>
+            <a href="#projects" class="nav-link">Projects</a>
           </li>
 
-          <li class="nav-item">
-            <a href="#" class="nav-link">Contact</a>
+          <li  class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
           </li>
         </ul>
       </nav>
     </header>
     <main>
-      <section class="hero">
+      <section id="home" class="hero">
         <div class="me-container">
           <img src="assets/imgs/me.png" alt="" class="me-img" />
         </div>
@@ -62,8 +62,8 @@
             I transform ideas into seamless digital experiences. Let's build something amazing together!
           </p> -->
           <div class="hero-cta">
-            <button class="hero-btn">Contact Me</button>
-            <button class="hero-btn secondary">View My Work</button>
+            <a href="#contact" class="hero-btn">Contact Me</a>
+            <a href="#projects" class="hero-btn secondary">View My Work</a>
           </div>
         </div>
         <div class="hero-img"></div>
@@ -97,7 +97,7 @@
       </section>
 
       <div class="page-sections">
-        <section class="education">
+        <section class="education" id="education">
           <div class="education-header">
             <h2 class="section-title">Education</h2>
             <p class="section-subtitle">Where the magic began...</p>
@@ -157,7 +157,7 @@
           </div>
         </section>
 
-        <section class="about-me">
+        <section id="about" class="about-me">
           <div class="about-header">
             <h2 class="section-title">About Me</h2>
             <p class="section-subtitle">Code by day, karate by... also day!</p>
@@ -256,7 +256,7 @@
                   questioning your life choices – but that's where the fun is!
                 </p>
               </div>
-<!-- 
+
               <div class="skill-container">
                 <div class="skill-group">
                   <h4>Coding Skills</h4>
@@ -270,13 +270,13 @@
                 <div class="skill-group">
                   <h4>Karate Skills</h4>
                   <div class="skill-tags">
-                    <span class="skill-tag karate">Kumite</span>
-                    <span class="skill-tag karate">Kata</span>
+                    <span class="skill-tag karate">Agility</span>
+                    <span class="skill-tag karate">Strength</span>
                     <span class="skill-tag karate">Explosive</span>
                     <span class="skill-tag karate">Speed</span>
                   </div>
                 </div>
-              </div> -->
+              </div>
             </div>
           </div>
 
@@ -289,7 +289,7 @@
           </div>
         </section>
 
-        <section class="projects">
+        <section id="projects" class="projects">
           <div class="projects-header">
             <h2 class="section-title">Selected Projects</h2>
             <p class="section-subtitle">
@@ -576,7 +576,7 @@
           </div>
         </section>
 
-        <section class="testimonials">
+        <section id="testimonals" class="testimonials">
           <div class="testimonials-header">
             <h2 class="section-title">What People Say</h2>
             <p class="section-subtitle">
@@ -750,7 +750,7 @@
           </div>
         </section>
        
-        <section class="skills">
+        <section id="skills" class="skills">
           <div class="skills-header">
             <h2 class="section-title">My Skills Arsenal</h2>
             <p class="section-subtitle">
@@ -1107,7 +1107,7 @@
           </div>
         </div>
 
-        <section class="contact">
+        <section id="contact" class="contact">
           <div class="contact-header">
             <h2 class="section-title">Get In Touch</h2>
             <p class="section-subtitle">
@@ -1204,7 +1204,7 @@
             </div>
 
             <div class="contact-form-container">
-              <form class="contact-form">
+              <form  class="contact-form">
                 <div class="form-header">
                   <h3>Send Me a Message</h3>
                   <p>No carrier pigeons needed!</p>
@@ -1219,6 +1219,8 @@
                     placeholder="What should I call you?"
                     required
                   />
+                  <span class="error-message" id="nameError"></span>
+
                 </div>
 
                 <div class="form-group">
@@ -1230,6 +1232,8 @@
                     placeholder="Where should I reply?"
                     required
                   />
+                  <span class="error-message" id="emailError"></span>
+
                 </div>
 
                 <div class="form-group">
@@ -1240,6 +1244,8 @@
                     name="subject"
                     placeholder="What's this about?"
                   />
+                  <span class="error-message" id="subjectError"></span>
+
                 </div>
 
                 <div class="form-group">
@@ -1251,6 +1257,8 @@
                     rows="5"
                     required
                   ></textarea>
+                  <span class="error-message" id="messageError"></span>
+
                 </div>
 
                 <div class="form-footer">

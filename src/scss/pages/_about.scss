@@ -292,6 +292,7 @@
   
   @media (max-width: $breakpoint-sm ) {
     grid-template-columns: 1fr;
+    gap: 0;
   }
   
   .skill-group {

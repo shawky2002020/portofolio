@@ -1,170 +1,291 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    
-    // Form validation
-    function validateField(field, errorId, validationFn) {
-      const value = field.value.trim();
-      const errorElement = document.getElementById(errorId);
-      const formGroup = field.closest('.form-group');
-      
-      if (!validationFn(value)) {
-        formGroup.classList.add('error');
-        errorElement.classList.add('show');
-        return false;
-      } else {
-        formGroup.classList.remove('error');
-        errorElement.classList.remove('show');
-        return true;
-      }
-    }
-    
-    // Validation functions
-    const validations = {
-      name: (value) => value.length >= 2,
-      email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
-      subject: (value) => true, // Optional field
-      message: (value) => value.length >= 10
-    };
-    
-    // Error messages
-    const errorMessages = {
-      name: 'Name must be at least 2 characters long',
-      email: 'Please enter a valid email address',
-      subject: '',
-      message: 'Message must be at least 10 characters long'
-    };
-    
-    // Set error messages
-    Object.keys(errorMessages).forEach(field => {
-      document.getElementById(field + 'Error').textContent = errorMessages[field];
-    });
-    
-    // Real-time validation
-    Object.keys(validations).forEach(fieldName => {
-      const field = document.getElementById(fieldName);
-      field.addEventListener('blur', () => {
-        validateField(field, fieldName + 'Error', validations[fieldName]);
+// Contact page animations
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import emailjs from "@emailjs/browser";
+
+gsap.registerPlugin(ScrollTrigger);
+// Contact section animations
+
+document.addEventListener("DOMContentLoaded", function () {
+  const contactTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".contact",
+      start: "top 80%",
+      end: "bottom 20%",
+      toggleActions: "play none none reverse",
+    },
+  });
+
+  // Social icon hover animations
+  const socialIcons = document.querySelectorAll(".social-icon");
+  if (socialIcons) {
+    socialIcons.forEach((icon) => {
+      icon.addEventListener("mouseenter", () => {
+        gsap.to(icon, {
+          y: -5,
+          backgroundColor: "#a4161a",
+          duration: 0.3,
+          ease: "power2.out",
+        });
       });
-      
-      field.addEventListener('input', () => {
-        if (field.closest('.form-group').classList.contains('error')) {
-          validateField(field, fieldName + 'Error', validations[fieldName]);
+
+      icon.addEventListener("mouseleave", () => {
+        gsap.to(icon, {
+          y: 0,
+          backgroundColor: "rgba(11, 9, 10, 0.5)",
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      });
+    });
+  }
+  contactTimeline
+    .from(".contact-header", {
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power3.out",
+    })
+    .from(
+      ".contact-intro",
+      {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+      },
+      "-=0.4"
+    )
+    .from(
+      ".contact-method",
+      {
+        opacity: 0,
+        stagger: 0.2,
+        duration: 0.6,
+        ease: "back.out(1.7)",
+      },
+      "-=0.4"
+    )
+    .from(
+      ".social-links",
+      {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+      },
+      "-=0.4"
+    )
+    .from(
+      ".contact-form-container",
+      {
+        x: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+      },
+      "-=0.6"
+    )
+    .from(
+      ".contact-quote",
+      {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+      },
+      "-=0.4"
+    );
+
+  // Form input animations
+  const formInputs = document.querySelectorAll(
+    ".contact-form input, .contact-form textarea"
+  );
+  if (formInputs) {
+    formInputs.forEach((input) => {
+      input.addEventListener("focus", () => {
+        gsap.to(input, {
+          borderColor: "#e5383b",
+          boxShadow: "0 0 0 3px rgba(229, 56, 59, 0.2)",
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      });
+
+      input.addEventListener("blur", () => {
+        if (!input.value) {
+          gsap.to(input, {
+            borderColor: "rgba(177, 167, 166, 0.3)",
+            boxShadow: "none",
+            duration: 0.3,
+            ease: "power2.out",
+          });
         }
       });
     });
-    
-    // Form submission
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      // Validate all fields
-      let isValid = true;
-      Object.keys(validations).forEach(fieldName => {
-        const field = document.getElementById(fieldName);
-        if (!validateField(field, fieldName + 'Error', validations[fieldName])) {
-          isValid = false;
-        }
-      });
-      
-      if (!isValid) {
-        showPopup('error', 'Validation Error', 'Please fill in all required fields correctly.');
-        return;
-      }
-      
-      // Show loading state
-      submitBtn.classList.add('loading');
-      
-      // Collect form data
-      const formData = {
-        name: document.getElementById('name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        subject: document.getElementById('subject').value.trim() || 'New Contact Form Message',
-        message: document.getElementById('message').value.trim()
+  }
+
+  // Email sending function
+  function sendEmail() {
+    // Get form element and check validity
+    const contactForm = document.querySelector(".contact-form");
+    if (!contactForm || !contactForm.checkValidity()) return;
+
+    // Get form data
+    const formData = new FormData(contactForm);
+    const templateParams = {
+        from_name: formData.get("name"),
+        from_email: formData.get("email"),
+        subject: formData.get("subject"),
+        message: formData.get("message"),
+        date: new Date().toLocaleString("en-US", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          timeZoneName: "short"
+        })
       };
-      
-      try {
-        // Simulate email sending (replace with actual email service)
-        await sendEmail(formData);
-        
-        // Show success message
-        showPopup('success', 'Message Sent!', 'Thanks for reaching out! I\'ll get back to you faster than a roundhouse kick to the head.');
-        
-        // Reset form
-        form.reset();
-        
-      } catch (error) {
-        // Show error message
-        showPopup('error', 'Oops!', 'Something went wrong. Please try again or contact me directly at shawkyelsayed2002@gmail.com');
-      } finally {
-        // Remove loading state
-        submitBtn.classList.remove('loading');
-      }
-    });
-  });
-  
-  // Email sending function (using EmailJS or similar service)
-  async function sendEmail(formData) {
-    // This is a mock function - replace with actual email service
-    // For real implementation, use EmailJS, Formspree, or your backend API
-    
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        // Simulate success/failure
-        if (Math.random() > 0.1) { // 90% success rate for demo
-          resolve();
-        } else {
-          reject(new Error('Network error'));
-        }
-      }, 2000);
-    });
-    
-    /* 
-    // Example with EmailJS:
-    return emailjs.send('your_service_id', 'your_template_id', {
-      from_name: formData.name,
-      from_email: formData.email,
-      subject: formData.subject,
-      message: formData.message,
-      to_email: 'shawkyelsayed2002@gmail.com'
-    });
-    */
+
+    // Send email using EmailJS
+    return emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      templateParams,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    );
   }
-  
-  // Popup functions
-  function showPopup(type, title, message) {
-    const popup = document.getElementById('messagePopup');
-    const icon = popup.querySelector('.popup-icon');
-    const titleElement = popup.querySelector('.popup-title');
-    const messageElement = popup.querySelector('.popup-message');
-    
-    // Set icon based on type
-    if (type === 'success') {
-      icon.className = 'popup-icon success fas fa-check-circle';
-    } else {
-      icon.className = 'popup-icon error fas fa-exclamation-circle';
-    }
-    
-    titleElement.textContent = title;
-    messageElement.textContent = message;
-    
-    popup.classList.add('show');
+
+  // Form submission with animations
+  const contactForm = document.querySelector(".contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const submitBtn = this.querySelector(".submit-btn");
+      const btnText = submitBtn.querySelector(".btn-text");
+      const btnIcon = submitBtn.querySelector("i");
+
+      // Disable button
+      submitBtn.disabled = true;
+
+      // Show loading state
+      gsap.to(btnText, {
+        opacity: 0,
+        y: -10,
+        duration: 0.3,
+        ease: "power2.in",
+        onComplete: () => {
+          btnText.textContent = "Sending...";
+          gsap.to(btnText, {
+            opacity: 1,
+            y: 0,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        },
+      });
+
+      gsap.to(btnIcon, {
+        rotation: 360,
+        repeat: 2,
+        duration: 0.8,
+        ease: "power1.inOut",
+      });
+
+      // Actually send the email
+      sendEmail()
+        .then(() => {
+          // Show success state
+          gsap.to(btnText, {
+            opacity: 0,
+            y: -10,
+            duration: 0.3,
+            ease: "power2.in",
+            onComplete: () => {
+              btnText.textContent = "Message Sent!";
+              btnIcon.className = "fas fa-check";
+              submitBtn.style.backgroundColor = "#4CAF50";
+
+              gsap.to(btnText, {
+                opacity: 1,
+                y: 0,
+                duration: 0.3,
+                ease: "power2.out",
+              });
+
+              gsap.to(btnIcon, {
+                scale: 1.2,
+                duration: 0.3,
+                ease: "back.out(1.7)",
+                onComplete: () => {
+                  gsap.to(btnIcon, {
+                    scale: 1,
+                    duration: 0.3,
+                    ease: "power2.out",
+                  });
+                },
+              });
+
+              // Reset form
+              contactForm.reset();
+            },
+          });
+        })
+        .catch((error) => {
+          console.error("Email sending failed:", error);
+
+          // Show error state
+          gsap.to(btnText, {
+            opacity: 0,
+            y: -10,
+            duration: 0.3,
+            ease: "power2.in",
+            onComplete: () => {
+              btnText.textContent = "Failed to Send";
+              btnIcon.className = "fas fa-exclamation-triangle";
+              submitBtn.style.backgroundColor = "#dc3545";
+
+              gsap.to(btnText, {
+                opacity: 1,
+                y: 0,
+                duration: 0.3,
+                ease: "power2.out",
+              });
+            },
+          });
+        })
+        .finally(() => {
+          // Reset button after delay
+          setTimeout(() => {
+            gsap.to(submitBtn, {
+              backgroundColor: "#a4161a",
+              duration: 0.5,
+              ease: "power2.inOut",
+            });
+
+            gsap.to(btnText, {
+              opacity: 0,
+              y: -10,
+              duration: 0.3,
+              ease: "power2.in",
+              onComplete: () => {
+                btnText.textContent = "Send Message";
+                btnIcon.className = "fas fa-paper-plane";
+                submitBtn.disabled = false;
+
+                gsap.to(btnText, {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.3,
+                  ease: "power2.out",
+                });
+              },
+            });
+          }, 3000);
+        });
+    });
   }
-  
-  function closePopup() {
-    document.getElementById('messagePopup').classList.remove('show');
-  }
-  
-  // Close popup when clicking outside
-  document.getElementById('messagePopup').addEventListener('click', function(e) {
-    if (e.target === this) {
-      closePopup();
-    }
-  });
-  
-  // Close popup with Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      closePopup();
-    }
-  });
+});
