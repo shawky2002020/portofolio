@@ -92,10 +92,10 @@ section {
     font-size: 35px !important;
   }
   @include respond-to(sm) {
-    font-size: 35px !important;
+    font-size: 30px !important;
   }
   @include respond-to(mobile) {
-    font-size: 29px !important;
+    font-size: 27px !important;
   }
   span {
     display: block;

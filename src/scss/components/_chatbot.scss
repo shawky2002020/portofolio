@@ -203,8 +203,7 @@
   flex-direction: column;
   gap: 15px;
   z-index: 1;
-  max-height: 98%;
-  border: solid;
+  max-height: 100%;
 
   &::-webkit-scrollbar {
     width: 6px;
@@ -530,26 +529,20 @@
 
 .chatbot-container {
   width: 400px;
-  height: 80vh;
-  @include respond-to(md) {
-    height: calc(100vh - 100px);
-  }
+  height: fit-content;
+
+
   @include respond-to(sm) {
     width: 90%;
-    height: calc(100vh - 70px);
-    max-height: 600px;
   }
 }
 .chatbot-header {
   height: 100px;
 }
 .chatbot-wrapper {
-  height: calc(100vh - 100px - 70px);
   display: grid;
-  grid-template-rows: 1fr 70px;
-  @include respond-to(md) {
-    height: calc(100vh - 100px - 70px);
-  }
+  grid-template-rows: 400px 70px;
+ 
 }
 
 .chatbot-topics,
