@@ -1048,6 +1048,8 @@ if (socialIcons) {
 // Testimonials Slider Functionality
 class TestimonialsSlider {
   constructor() {
+    ScrollTrigger.refresh();
+
     this.currentSlide = 0;
     this.slides = document.querySelectorAll('.testimonial-card');
     this.dots = document.querySelectorAll('.testimonials-dots .dot');

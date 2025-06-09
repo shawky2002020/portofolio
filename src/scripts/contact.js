@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleActions: "play none none reverse",
     },
   });
+  ScrollTrigger.refresh();
+
 
   // Social icon hover animations
   const socialIcons = document.querySelectorAll(".social-icon");
@@ -45,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       opacity: 0,
       duration: 0.8,
       ease: "power3.out",
+
     })
     .from(
       ".contact-intro",
