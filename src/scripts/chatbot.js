@@ -127,7 +127,15 @@ class Chatbot {
       this.topicsDiv = document.querySelector(".chatbot-topics");
       this.questionsDiv = document.querySelector(".chatbot-questions");
       this.closeButton = document.querySelector(".control-btn.close");
+      this.chatTag = document.querySelector(".chat-tag")
+      gsap.to(this.chatTag,
+        {
+         duration: 1,
+         repeat:-1,
+         y:-30,
+         ease:"back.inOut"
 
+        })
       // Check if critical elements exist
       if (!this.toggle || !this.container || !this.messagesContainer) {
         console.error("Critical chatbot DOM elements not found. Please check your HTML structure.");
@@ -248,7 +256,14 @@ class Chatbot {
         duration: 0.3,
         ease: "power3.out",
         onComplete: () => {
-          
+          gsap.to(this.chatTag,
+            {
+              opacity:0,
+              duration:1,
+              ease:'ease',
+              visibility:'hidden'
+            }
+          )
           // Then animate container in
           gsap.fromTo(this.container, {
             opacity: 0,
@@ -292,6 +307,13 @@ class Chatbot {
             ease: "back.out(1.7)",
             onComplete: () => {
               this.toggle.classList.remove("active");
+              gsap.to(this.chatTag,
+                {
+                 duration: 1,
+                 repeat:-1,
+                 y:-50
+
+                })
             },
           });
         },
