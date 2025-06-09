@@ -4,6 +4,7 @@
   // background-color: $secondary-dark;
   position: relative;
   overflow: hidden;
+  margin: auto;
   
   @include respond-to(md) {
     padding: 80px 20px;
@@ -74,12 +75,12 @@
 
 .contact-container {
   display: grid;
-  grid-template-columns: 1fr ;
+  grid-template-columns: 1fr 1fr ;
 //   gap: 50px;
   position: relative;
   z-index: 1;
   
-  @include respond-to(md) {
+  @include respond-to(xl) {
     grid-template-columns: 1fr;
     gap: 60px;
   }
@@ -90,9 +91,11 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+
 }
 
 .contact-intro {
+  max-width: 900px;
   p {
     font-size: 18px;
     line-height: 1.6;
@@ -251,7 +254,7 @@
 .contact-form-container {
   background-color: rgba($secondary-color, 0.5);
   border-radius: 10px;
-  padding: 30px;
+  padding:0 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
