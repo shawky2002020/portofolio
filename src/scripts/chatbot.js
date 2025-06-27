@@ -1,4 +1,5 @@
 import { gsap } from "gsap";
+import { ScrollController } from "./utils";
 let scrollY = 0;
 
 class Chatbot {
@@ -8,6 +9,8 @@ class Chatbot {
     this.conversationStarted = false;
     this.messageQueue = [];
     this.processingQueue = false;
+     this.sc = new ScrollController();
+     this.sc.setChatbotSelector('.chatbot-container')
 
     // Knowledge Base - now grouped by topic with questions
     this.knowledgeBase = {
@@ -225,15 +228,11 @@ class Chatbot {
   
 
  openChatbot() {
-  // scrollY = window.scrollY;
-  // document.body.style.top = `-${scrollY}px`;
-  document.body.classList.add('no-scroll');
+  this.sc.disable();
 }
 
  closeChatbot() {
-  document.body.classList.remove('no-scroll');
-  // document.body.style.top = '';
-  // window.scrollTo(0, scrollY); // restore scroll position
+  this.sc.enable();
 }
 
 

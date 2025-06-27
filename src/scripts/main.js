@@ -3,31 +3,17 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 // main.js
-import SmoothScroll from "./utils";
+import { SmoothScroll, ScrollController } from "./utils";
 
 const smoothScroll = new SmoothScroll();
+const scrollController = new ScrollController(smoothScroll);
 
+
+// Set the chatbot container selector
+
+// Make both available globally
 window.smoothScroll = smoothScroll;
-
-// Initialize Lenis
-const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  orientation: "vertical",
-  gestureOrientation: "vertical",
-  smoothWheel: true,
-  wheelMultiplier: 1,
-  touchMultiplier: 2,
-  infinite: false,
-});
-
-// Animation frame loop
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
+window.scrollController = scrollController;
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -239,7 +239,7 @@
   max-height: 100%;
 
   &::-webkit-scrollbar {
-    width: 6px;
+    width: 12px;
   }
 
   &::-webkit-scrollbar-track {
@@ -574,7 +574,7 @@
 }
 .chatbot-wrapper {
   display: grid;
-  grid-template-rows: 400px 70px;
+  grid-template-rows: 300px 70px;
  
 }
 
