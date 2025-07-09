@@ -2,11 +2,6 @@
 
 A modern, interactive portfolio showcasing the journey, skills, and projects of Shawky Ahmad — full-stack developer and Egyptian national karate champion.
 
----
-
-<div align="center">
-  <img src="assets/imgs/rocket.png" alt="Rocket" width="80"/>
-</div>
 
 ---
 
@@ -106,15 +101,6 @@ For feedback or collaboration, reach out via the contact form or social links in
 
 ---
 
-<div align="center">
-  <img src="assets/imgs/karate.png" alt="Karate" width="60"/>
-  <img src="assets/imgs/punch.png" alt="Punch" width="60"/>
-  <img src="assets/imgs/gold.png" alt="Gold Medal" width="60"/>
-</div>
 
-<style>
-body, html {
-  background: #000;
-  color: #f5f5f5;
-}
-</style>
+
+
