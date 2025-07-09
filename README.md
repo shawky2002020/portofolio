@@ -91,11 +91,6 @@ MEAN Stack Developer & Egyptian National Karate Champion
 
 ---
 
-## 📣 Live Demo
-*Coming soon!*
-
----
-
 ## 📧 Contact
 For feedback or collaboration, reach out via the contact form or social links in the site.
 
