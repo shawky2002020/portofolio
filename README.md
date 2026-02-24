@@ -5,7 +5,7 @@ A modern, interactive portfolio showcasing the journey, skills, and projects of 
 ---
 
 <div align="center">
-  <img src="assets/imgs/rocket.png" alt="Rocket" width="80"/>
+  <img src="assets/imgs/me.png" alt="Shawky Ahmad" width="90" style="border-radius:50%;box-shadow:0 0 10px #e5383b;"/>
 </div>
 
 ---
@@ -95,26 +95,3 @@ assets/
 MEAN Stack Developer & Egyptian National Karate Champion
 
 ---
-
-## 📣 Live Demo
-*Coming soon!*
-
----
-
-## 📧 Contact
-For feedback or collaboration, reach out via the contact form or social links in the site.
-
----
-
-<div align="center">
-  <img src="assets/imgs/karate.png" alt="Karate" width="60"/>
-  <img src="assets/imgs/punch.png" alt="Punch" width="60"/>
-  <img src="assets/imgs/gold.png" alt="Gold Medal" width="60"/>
-</div>
-
-<style>
-body, html {
-  background: #000;
-  color: #f5f5f5;
-}
-</style>
